@@ -23,9 +23,9 @@ func Hey(remark string) string {
 		return "Sure."
 	case isEmpty(remark):
 		return "Fine. Be that way!"
+	default:
+		return "Whatever."
 	}
-
-	return "Whatever."
 
 }
 
