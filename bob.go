@@ -14,6 +14,8 @@ import (
 // He answers 'Whatever.' to anything else.
 func Hey(remark string) string {
 
+	remark = strings.TrimSpace(remark)
+
 	switch {
 	case isQuestion(remark) && isShouting(remark):
 		return "Calm down, I know what I'm doing!"
@@ -30,7 +32,7 @@ func Hey(remark string) string {
 }
 
 func isEmpty(text string) bool {
-	return len(strings.TrimSpace(text)) == 0
+	return len(text) == 0
 }
 
 func isShouting(text string) bool {
@@ -38,5 +40,5 @@ func isShouting(text string) bool {
 }
 
 func isQuestion(text string) bool {
-	return strings.HasSuffix(strings.TrimSpace(text), "?")
+	return strings.HasSuffix(text, "?")
 }
